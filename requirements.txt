@@ -11,8 +11,6 @@ async-generator==1.10
 attrs==21.2.0
 Babel==2.9.1
 backcall==0.2.0
-backports.zoneinfo==0.2.1
-beautifulsoup4==4.11.2
 billiard==4.2.0
 bleach==4.1.0
 blinker==1.4
@@ -99,7 +97,6 @@ pydeck==0.7.1
 Pygments==2.11.2
 pylint==2.7.4
 Pympler==1.0.1
-PyMuPDF==1.20.2
 pyparsing==2.4.7
 pyrsistent==0.18.1
 pysbd==0.3.4
@@ -113,7 +110,6 @@ requests==2.27.1
 requests-ntlm==1.1.0
 responses==0.18.0
 rpyc==5.2.3
-rustworkx==0.12.1
 safetensors==0.4.0
 segtok==1.5.11
 selenium==4.8.2
@@ -133,8 +129,6 @@ terminado==0.13.1
 testpath==0.5.0
 threadpoolctl==3.1.0
 tifffile==2022.5.4
-toml==0.10.2
-tomli==2.0.0
 toolz==0.11.2
 tornado==6.1
 tqdm==4.64.0
@@ -160,7 +154,6 @@ widgetsnbextension==3.6.0
 wrapt==1.12.1
 wsproto==1.2.0
 xxhash==3.0.0
-yarl==1.6.3
 yfinance==0.1.70
 zipp==3.7.0
 gunicorn==20.0.4  
