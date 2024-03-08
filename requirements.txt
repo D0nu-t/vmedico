@@ -125,15 +125,11 @@ python-dotenv==1.0.0
 pytorch-gpu==0.0.1
 pytz==2020.5
 pytz-deprecation-shim==0.1.0.post0
-PyWavelets==1.1.1
 PyYAML==6.0
-pyzmq==22.3.0
-redis==5.0.1
 regex==2022.8.17
 requests==2.27.1
 requests-ntlm==1.1.0
 responses==0.18.0
-retworkx==0.12.1
 rpyc==5.2.3
 rustworkx==0.12.1
 safetensors==0.4.0
