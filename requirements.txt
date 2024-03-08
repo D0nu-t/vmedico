@@ -14,7 +14,6 @@ backcall==0.2.0
 backports.zoneinfo==0.2.1
 beautifulsoup4==4.11.2
 billiard==4.2.0
-black==22.1.0
 bleach==4.1.0
 blinker==1.4
 bs4==0.0.1
@@ -25,13 +24,7 @@ chardet==4.0.0
 charset-normalizer==2.0.11
 click==8.1.7
 click-didyoumean==0.3.0
-click-plugins==1.1.1
-click-repl==0.3.0
-cloudpickle==2.1.0
-colorama==0.4.4
 cron-descriptor==1.4.3
-cryptography==38.0.4
-cv2-tools==2.4.0
 cycler==0.10.0
 debugpy==1.5.1
 decorator==5.1.1
@@ -52,8 +45,6 @@ gitdb==4.0.9
 GitPython==3.1.27
 h11==0.14.0
 idna==3.1
-ImageHash==4.2.0
-imageio==2.19.5
 imbalanced-learn==0.9.1
 imblearn==0.0
 importlib-metadata==4.11.3
@@ -141,8 +132,6 @@ soupsieve==2.4
 sqlparse==0.4.4
 stack-data==0.1.4
 stevedore==4.1.1
-streamlit==1.8.1
-sympy==1.11.1
 tenacity==8.0.1
 terminado==0.13.1
 testpath==0.5.0
