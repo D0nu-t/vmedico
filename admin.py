@@ -15,3 +15,7 @@ class AppointmentAdmin(admin.ModelAdmin):
     search_fields = ('doctor__username', 'patient__username', 'notes')
 
 admin.site.register(Appointment, AppointmentAdmin)
+
+admin.site.site_header = "Vmedico Admin"
+admin.site.site_title = "Vmedico Admin"
+admin.site.index_title = "Admin"
