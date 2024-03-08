@@ -16,7 +16,6 @@ beautifulsoup4==4.11.2
 billiard==4.2.0
 bleach==4.1.0
 blinker==1.4
-bs4==0.0.1
 cachetools==5.0.0
 certifi==2021.10.8
 cffi==1.15.0
@@ -94,7 +93,6 @@ prometheus-client==0.13.1
 protobuf==3.20.1
 psutil==5.9.4
 pure-eval==0.2.2
-pyarrow==7.0.0
 pycodestyle==2.9.1
 pycparser==2.21
 pydeck==0.7.1
