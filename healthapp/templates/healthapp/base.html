@@ -1,0 +1,60 @@
+<!-- templates/base.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Vmedico{% endblock %}</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/vmedico-icon.png' %}"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="{% url 'home' %}" class="navbar-brand">
+                    <img src="{% static 'images/vmedico-icon.png' %}" alt="VMedico">
+                    <h1>VMEDICO</h1>
+                </a>
+    
+                <div class="navbar-nav">
+                    <a href="{% url 'register_doctor' %}" class="nav-item">Register as Doctor</a>
+                    <a href="{% url 'register_patient' %}" class="nav-item">Register as Patient</a>
+                    <a href="{% url 'doctor_dashboard' %}" class="nav-item">Go to Doctor Dashboard</a>
+                    <a href="{% url 'patient_dashboard' %}" class="nav-item">Go to Patient Dashboard</a>
+                    <a href="{% url 'admin:index' %}" class="nav-item">Admin Dashboard</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Vmedico</h3>
+            <p>Contact us at <a href="mailto:contact@example.com">contact@vmedico.com</a> or call us at +123 456 7890.</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+            </ul>
+            
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Vmedico. All rights reserved.</p>
+            <!-- <div>
+                <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+            </div> -->
+        </div>
+    </footer>
+    
+</body>
+</html>

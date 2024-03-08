@@ -1,0 +1,43 @@
+{% extends 'healthapp/base.html' %}
+{% block content %}
+<h1>Patient Dashboard</h1>
+<header>
+  <h2>Signed in as {{ user.get_full_name|default:user.username }}</h2>
+</header>
+<h2>Your Appointments</h2>
+{% if appointments %}
+  <ul>
+    {% for appointment in appointments %}
+      <li>
+        <strong>Date and Time:</strong> {{ appointment.date_time }}<br>
+        <strong>With Doctor:</strong> {{ appointment.doctor.username }}<br>
+        <strong>Notes:</strong> {{ appointment.notes}}<br>
+        <hr>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>You have no appointments scheduled.</p>
+{% endif %}
+
+<h2>Your Prescriptions</h2>
+{% if prescriptions %}
+  <ul>
+    {% for prescription in prescriptions %}
+      <li>
+        <strong>Medication:</strong> {{ prescription.medication }}<br>
+        <strong>With Doctor:</strong> {{ prescription.doctor.username }}<br>
+        <strong>Issued on:</strong> {{ prescription.date_issued }}<br>
+        <strong>Instructions:</strong> {{ prescription.instructions }}<br>
+        <hr>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>You have no prescriptions.</p>
+{% endif %}
+<a href="{% url 'add_appointment' %}">Add Appointment</a><br>
+<a href="{% url 'health_records_list' %}">View Health Records</a><br>
+<a href="{% url 'lab_results' %}">View Lab Results</a><br>
+<a href="{% url 'logout' %}">Logout</a>
+{% endblock %}

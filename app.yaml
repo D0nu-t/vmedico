@@ -1,0 +1,19 @@
+runtime: python310  # Use the Python version compatible with your Django app
+entrypoint: gunicorn -b :$PORT healthproject.wsgi
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: 'healthproject.settings'
+  SECRET_KEY: "django-insecure-suhb#s+r@nj=y4hk(*jd-%%lmj^5e0-)e!cy(b2*ta+^1xvrne"
+  DEBUG: 'False'  # Set to 'True' for debugging, 'False' for production
+
+handlers:
+- url: /static
+  static_dir: /static/
+- url: /.*
+  script: auto
+
+automatic_scaling:
+  min_idle_instances: 1  # Automatic scaling settings
+  max_idle_instances: 5  # Adjust based on your needs
+  min_instances: 1
+  max_instances: 20

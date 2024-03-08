@@ -1,0 +1,65 @@
+<!-- health_stats.html -->
+{% extends 'healthapp/base.html' %}
+
+{% block content %}
+<h2>{{ user.get_full_name|default:user.username }}'s Health Stats</h2>
+
+<canvas id="healthChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const dates = JSON.parse('{{ dates|safe }}');
+    const weights = JSON.parse('{{ weights|safe }}');
+    const bloodPressures = JSON.parse('{{ blood_pressures|safe }}').map(bp => bp[0] / bp[1]); // Combining systolic/diastolic
+    const glucoseLevels = JSON.parse('{{ glucose_levels|safe }}');
+  
+    const ctx = document.getElementById('healthChart').getContext('2d');
+    const healthChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: dates,
+        datasets: [
+          {
+            label: 'Weight',
+            data: weights,
+            borderColor: 'blue',
+            backgroundColor: 'rgba(0, 0, 255, 0.1)',
+            yAxisID: 'y',
+          },
+          {
+            label: 'Blood Pressure',
+            data: bloodPressures,
+            borderColor: 'red',
+            backgroundColor: 'rgba(255, 0, 0, 0.1)',
+            yAxisID: 'y1',
+          },
+          {
+            label: 'Glucose Levels',
+            data: glucoseLevels,
+            borderColor: 'green',
+            backgroundColor: 'rgba(0, 255, 0, 0.1)',
+            yAxisID: 'y',
+          },
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            type: 'linear',
+            display: true,
+            position: 'left',
+          },
+          y1: {
+            type: 'linear',
+            display: true,
+            position: 'right',
+            grid: {
+              drawOnChartArea: false,
+            },
+          },
+        }
+      }
+    });
+  </script>
+  
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'healthapp/base.html' %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<header>
+    <h2>{{ user.get_full_name|default:user.username }}'s Health Records</h2>
+</header>
+<div>
+    <a href="{% url 'add_health_record' %}">Add New Record</a>
+</div>
+<ul>
+    {% for record in records %}
+    <li>
+        <strong>{{ record.date_recorded }}</strong>: Weight: {{ record.weight }}kg, Blood Pressure: {{ record.blood_pressure_systolic }}/{{ record.blood_pressure_diastolic }}, Glucose Levels: {{ record.glucose_levels }} mg/dL
+        <br>Notes: {{ record.notes }}
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'health_stats' %}">View Health Stats Chart</a><br>
+{% endblock %}

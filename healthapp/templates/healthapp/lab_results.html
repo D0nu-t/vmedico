@@ -1,0 +1,33 @@
+{% extends 'healthapp/base.html' %}
+
+{% block content %}
+<h2>Lab Results for {{ user.get_full_name|default:user.username }}</h2>
+
+{% if results %}
+    <table>
+        <thead>
+            <tr>
+                <th>Test Name</th>
+                <th>Result</th>
+                <th>Unit</th>
+                <th>Reference Range</th>
+                <th>Date of Test</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.test_name }}</td>
+                    <td>{{ result.result_value }}</td>
+                    <td>{{ result.unit }}</td>
+                    <td>{{ result.reference_range }}</td>
+                    <td>{{ result.date_of_test }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No lab results available.</p>
+{% endif %}
+
+{% endblock %}

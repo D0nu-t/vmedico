@@ -1,0 +1,43 @@
+{% extends 'healthapp/base.html' %}
+
+{% block title %}VMEDICO - Your Health, Our Priority{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to VMEDICO</h1>
+        <p>Your health is our utmost priority. Connect with top healthcare professionals, manage your appointments, and access medical records with ease.</p>
+        <a href="{% url 'register_patient' %}" class="btn btn-primary">Get Started</a>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="service-items">
+        <div class="service-item">
+            <h3>Appointments</h3>
+            <p>Easily book appointments with highly trained doctors.</p>
+        </div>
+        <div class="service-item">
+            <h3>Lab Integrations</h3>
+            <p>Get lab results directly into your account without any hassle.</p>
+        </div>
+        <div class="service-item">
+            <h3>Health Monitoring</h3>
+            <p>Track your health records and monitor progress in your health journey.</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about">
+    <h2>About VMEDICO</h2>
+    <p>At VMEDICO, we bridge the gap between patients and healthcare providers through a seamless digital experience. Our platform ensures your medical needs are addressed with the highest level of care and convenience.</p>
+</section>
+
+
+
+{% endblock %}

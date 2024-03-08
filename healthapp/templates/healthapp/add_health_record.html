@@ -1,0 +1,10 @@
+<!-- add_health_record.html -->
+{% extends 'healthapp/base.html' %}
+{% block content %}
+<h2>Add Health Record</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Record</button>
+</form>
+{% endblock %}

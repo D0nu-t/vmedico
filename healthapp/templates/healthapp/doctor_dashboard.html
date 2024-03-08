@@ -1,0 +1,37 @@
+<!-- doctor_dashboard.html -->
+{% extends 'healthapp/base.html' %}
+{% block content %}
+  <h1>Doctor Dashboard</h1>
+  <header>
+    <h2>Signed in as {{ user.get_full_name|default:user.username }}</h2>
+</header>
+  <h2>Appointments</h2>
+  <ul>
+    {% for appointment in appointments %}
+      <li>{{ appointment.date_time }} with {{ appointment.patient.username }}</li>
+      <strong>Notes:</strong> {{ appointment.notes}}<br>
+      <a href="{% url 'send_appointment_reminder' appointment.id %}" class="btn btn-primary">Send Reminder</a>
+      <hr>
+    {% endfor %}
+  </ul>
+
+  <h2>Prescriptions</h2>
+  <ul>
+    {% for prescription in prescriptions %}
+    <li>
+      <strong>Medication:</strong> {{ prescription.medication }}<br>
+      <strong>Prescribed to:</strong> {{ prescription.patient.username }}<br>
+      <strong>Issued on:</strong> {{ prescription.date_issued }}<br>
+      <strong>Instructions:</strong> {{ prescription.instructions }}<br>
+      <hr>
+    </li>
+    {% endfor %}
+  </ul>
+  
+  <!-- Links to add new appointments or prescriptions -->
+  <a href="{% url 'add_appointment' %}">Add Appointment</a><br>
+  <a href="{% url 'add_prescription' %}">Add Prescription</a><br>
+  <a href="{% url 'add_lab_result' %}">Add Lab Result</a><br>
+  <a href="{% url 'logout' %}">Logout</a>
+
+  {% endblock %}

@@ -1,0 +1,301 @@
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
+    min-height: 70px;
+    border-bottom: #0779e4 3px solid;
+    width: 100%;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    
+}
+
+
+header a:hover {
+    text-decoration: none; /* Ensures there's no underline on hover */
+}
+
+/* Navigation */
+nav {
+    color: #fff;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+/* Main content */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Sidebar */
+aside {
+    width: 30%;
+    background: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+aside a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Article */
+article {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 31px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+footer .socials {
+    list-style-type: none; /* Removes bullet points from list */
+    padding: 0;
+    margin: 0; /* Removes default margin */
+    display: flex; /* Displays list items in a flex row */
+    justify-content: center; /* Centers the list items horizontally */
+    align-items: center; /* Centers the list items vertically */
+}
+
+footer .socials li {
+    margin: 0 10px; /* Adds space between list items */
+}
+
+
+/* Form and Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"],
+button {
+    display: inline-block;
+    background: #0779e4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background: #0056b3;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Link Styles */
+a {
+    color: #0779e4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* styles.css */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    color: white;
+    justify-content: center;
+    align-items: center
+}
+/* Add to your styles.css */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust the gap between the logo and the text as needed */
+    text-decoration: none; /* Removes underline from the link */
+}
+
+.navbar-brand img {
+    height: 50px; /* Adjust the size as needed */
+    width: auto; /* Keeps the aspect ratio of the image */
+
+}
+
+/* Adjust the font size, weight, and color to match your branding */
+.navbar-brand h1 {
+    font-size: 1.5em; /* Adjust the size as needed */
+    color: #fefdfd; /* Change the color to match your branding */
+    margin: 0; /* Removes default margin from the h1 */
+    font-weight: bold; /* Optional: if you want the brand name to be bold */
+}
+
+.navbar a, .navbar .navbar-brand {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover, .navbar .navbar-brand:hover {
+    background-color: #00000000;
+    color: black;
+}
+
+/* Ensure links are vertically aligned on smaller screens */
+.navbar .navbar-nav, .navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+}
+
+/* Hide the links inside the navbar menu (they will be shown in dropdown) */
+.navbar .navbar-nav {
+    display: none;
+}
+
+
+
+/* Responsive styling */
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        float: right;
+        display: flex;
+    }
+
+    .navbar a {
+        float: none;
+        display: block;
+    }
+
+    .nav-item {
+        display: inline;
+        padding: 0 10px;
+    }
+
+    /* Hide hamburger menu on larger screens */
+    .navbar-toggle {
+        display: none;
+    }
+}
+
+
+
+/* Clear floats */
+.navbar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.hero {
+    background: #50a3a2;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.services, .about, .contact {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.service-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    width: 30%;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+/* Adjust the service item width on smaller screens */
+@media (max-width: 768px) {
+    .service-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+.btn {
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}

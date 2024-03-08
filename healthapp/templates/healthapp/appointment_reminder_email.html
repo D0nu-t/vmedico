@@ -1,0 +1,16 @@
+<!-- templates/healthapp/appointment_reminder_email.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Reminder</title>
+</head>
+<body>
+    <h1>Appointment Reminder</h1>
+    <p>Dear {{ patient.username }},</p>
+    <p>This is a friendly reminder that you have an upcoming appointment with {{ appointment.doctor.username }} on {{ appointment.date_time|date:"D, M d, Y" }} at {{ appointment.date_time|time:"g:i A" }}.</p>
+    <p>Please make sure to arrive on time for your appointment.</p>
+    <p>Best regards,<br>
+    Your Healthcare Team, VMEDICO</p>
+</body>
+</html>
